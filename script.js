@@ -17,7 +17,9 @@ $("#searchBtn").click(function(event) {
 
 if ($("#searchBtn").click() === true) {
     let newBtns = $("#newBtns");
-    newBtns.prepend("<button>");
+    $("<ul>").appendTo(newBtns);
+    $("<ul>").addClass("searchList");
+    $("<button>").text(searchCity).prependTo($(".searchList"));
 };
 
 
