@@ -5,19 +5,20 @@ let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&
 
 
 //searchBtn function
-$("#searchBtn").click(function() { 
-    click.preventDefault();
+$("#searchBtn").click(function(event) { 
+    event.preventDefault();
     let searchInput = $("#searchInput"); 
     let searchCity = $(this).siblings(searchInput).val();
     localStorage.setItem(searchCity, JSON.stringify(searchInput));
-    console.log(searchInput);
-    console.log(setCity);
+    console.log(searchCity);
 })
+
 //End searchBtn function
 
-if ($("#searchBtn").click === true) {
-
-}
+if ($("#searchBtn").click() === true) {
+    let newBtns = $("#newBtns");
+    newBtns.prepend("<button>");
+};
 
 
 
