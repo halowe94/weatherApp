@@ -1,8 +1,11 @@
-let city = "Sacramento";
-//let state = "CA";
-let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=ba3476e23f33fcbced7a77c27b3df244";
+let temperture = $("#temp");
+let humidity = $("#humidity");
+let windSpeed = $("#wind");
+let uvIndex = $("#uvIndex");
 
 
+function generateWeather() {
+}
 
 //searchBtn function
 $("#searchBtn").click(function(event) { 
@@ -11,35 +14,36 @@ $("#searchBtn").click(function(event) {
     let searchCity = $(this).siblings(searchInput).val();
     localStorage.setItem(searchCity, JSON.stringify(searchInput));
     console.log(searchCity);
+
+    //populate new buttons
+    let newBtns = $("#newBtns");
+    let searchList = $("<ul>")
+    searchList.addClass("searchList");
+    searchList.appendTo(newBtns);
+    $("<button>").text(searchCity).prependTo(searchList);
 })
 
 //End searchBtn function
 
-if ($("#searchBtn").click() === true) {
-    let newBtns = $("#newBtns");
-    $("<ul>").appendTo(newBtns);
-    $("<ul>").addClass("searchList");
-    $("<button>").text(searchCity).prependTo($(".searchList"));
-};
+//retrieve from local storage
+function cityFunction(){
+    let city = "Sacramento";
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=ba3476e23f33fcbced7a77c27b3df244";
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    // //begin function
+    }).then(function(response){
+    console.log(city);
 
+    //begin if statement
+    if (response.list == "2", "10", "18", "26", "34") {
+        console.log(response.list[2].main);
+    }
+    //end if statement
 
-
-
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-//begin function
-}).then(function(response){
-console.log(response);
-
-//begin if statement
-if (response.list == "2", "10", "18", "26", "34") {
-    console.log(response.list[2].main);
+    });
 }
-//end if statement
-
-});
 //end function
 
 
