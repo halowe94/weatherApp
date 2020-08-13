@@ -1,13 +1,10 @@
-let cityGlobal = "";
+//global variable to push outputs
+let cityGlobal = [];
 
 let temperture = $("#temp");
 let humidity = $("#humidity");
 let windSpeed = $("#wind");
 let uvIndex = $("#uvIndex");
-
-
-function generateWeather() {
-}
 
 //searchBtn function
 $("#searchBtn").click(function(event) { 
@@ -33,24 +30,28 @@ $("#searchBtn").click(function(event) {
 
 //retrieve from local storage
 function cityFunction(){
-    let city = "Sacramento";
+    let city = cityGlobal[0].val();
     let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=ba3476e23f33fcbced7a77c27b3df244";
     $.ajax({
         url: queryURL,
         method: "GET"
     // //begin function
     }).then(function(response){
-    console.log(city);
+    console.log(response);
 
-    //begin if statement
+//begin if statement
     if (response.list == "2", "10", "18", "26", "34") {
         console.log(response.list[2].main);
     }
-    //end if statement
+//end if statement
 
     });
 }
 //end function
+
+function generateWeather() {
+    cityFunction();
+};
 
 
 //whatever is in the top [global scope] will load
