@@ -1,3 +1,5 @@
+let cityGlobal = "";
+
 let temperture = $("#temp");
 let humidity = $("#humidity");
 let windSpeed = $("#wind");
@@ -21,7 +23,11 @@ $("#searchBtn").click(function(event) {
     searchList.addClass("searchList");
     searchList.appendTo(newBtns);
     $("<button>").text(searchCity).prependTo(searchList);
+
+    cityGlobal.push(searchCity);
+    console.log(cityGlobal);
 })
+
 
 //End searchBtn function
 
