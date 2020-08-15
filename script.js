@@ -40,27 +40,32 @@ function cityFunction(cityGlobal){
     // //begin function
     }).then(function(response){
     console.log(response);
-    
+
+    //append day 1
     let dayOne = response.list[2].main.temp;
     console.log(dayOne);
     let dayOneDate = response.list[2].dt_txt;
     $("#day1").append(dayOneDate + " " + dayOne);
 
+    //append day 2
     let dayTwo = response.list[10].main.temp;
     console.log(dayTwo);
     let dayTwoDate = response.list[10].dt_txt;
     $("#day2").append(dayTwo + " " + dayTwoDate);
 
+    //append day 3
     let dayThree = response.list[18].main.temp;
     console.log(dayThree);
     let dayThreeDate = response.list[18].dt_txt;
     $("#day3").append(dayThree + " " + dayThreeDate);
 
+    //append day 4
     let dayFour = response.list[26].main.temp;
     console.log(dayFour);
     let dayFourDate = response.list[26].dt_txt;
     $("#day4").append(dayFour + " " + dayFourDate);
 
+    //append day 5
     let dayFive = response.list[34].main.temp;
     console.log(dayFive);
     let dayFiveDate = response.list[34].dt_txt;
@@ -70,17 +75,11 @@ function cityFunction(cityGlobal){
     let todaysDate = moment().format('MMMM Do YYYY');
     let iconHeader = response.list[0].weather[0].icon;
 
-    //console.log(iconHeader);
+    //city nate & date header
     $("#cityHeader").append(cityName + " " + "(" + todaysDate + ")");
 
-//begin if statement
-    //let today = repsonse.list[2].main;
-
-    //if (today = date + " " )
-    //if (response.list == "2", "10", "18", "26", "34") {
-        //console.log(response.list[2].main);
-    //}
-//end if statement
+    //humidity
+    (humidity).append(" " + response.list[0].main.humidity);
 
     });
 }

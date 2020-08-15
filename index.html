@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" src="style.css">
     <title>Weather Generator App</title>
 </head>
 <!--Navbar-->
@@ -14,10 +15,10 @@
 <body>
     <div class="row">
         <div class="row col-lg-4 p-3 mb-2 bg-light text-dark">
-            <h4 class="mx-auto col-12">Search for a City</h4>
+            <h4 class="mx-auto col-12 p-5" id="cityForm">Search for a City</h4>
             <br>
             <div>
-                <form class="form-inline my-2 my-lg-0 mx-auto">
+                <form class="form-inline my-2 my-lg-0 mx-auto p-5">
                     <input class="form-control mr-sm-2" type="search" placeholder="Enter City Name" aria-label="Search" id="searchInput">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBtn">Search</button>
                 </form>
