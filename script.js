@@ -1,6 +1,5 @@
 //global variable to push outputs
 let cityGlobal = [];
-let city = cityGlobal[0];
 
 let temperture = $("#temp");
 let humidity = $("#humidity");
@@ -55,11 +54,6 @@ function cityFunction(cityGlobal){
 }
 //end function
 
-function generateWeather() {
-    cityFunction();
-    tempFunc();
-};
-
 function tempFunc(){
     let city = cityGlobal[0];
     let tempURL = "https://api.openweathermap.org/data/2.5/find?q=" + city + "&units=imperial";
@@ -73,6 +67,11 @@ function tempFunc(){
     });
 };
 
+function generateWeather() {
+    cityFunction();
+    tempFunc();
+};
+
 //whatever is in the top [global scope] will load
 //8 per day for 5 day for loop
 //if dt_txt = 15:00 00
@@ -81,4 +80,3 @@ function tempFunc(){
 //the target is event.target
 //if statement for when someone comes to page for the first time
 
-generateWeather();
